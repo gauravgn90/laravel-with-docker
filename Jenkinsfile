@@ -32,7 +32,8 @@ pipeline {
         stage("Start Container") {
             steps {
                sh '''
-                    chmod +x ./script.sh
+                    ls -ll
+                    chmod +x script.sh
                     ./script.sh
                 '''
             }
