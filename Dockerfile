@@ -35,7 +35,7 @@ RUN COMPOSER_MEMORY_LIMIT=-1 composer self-update 1.10.10
 RUN COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction --no-scripts --ignore-platform-reqs
 RUN COMPOSER_MEMORY_LIMIT=-1 composer dump-autoload --no-interaction   
 RUN pwd
-RUN ls -ll
+RUN ls -al
 RUN chown -R www-data:www-data /var/www
 
 # Expose port 9000 and start php-fpm server
