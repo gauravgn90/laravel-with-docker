@@ -24,11 +24,11 @@ pipeline {
                 ''' 
             }
         }
-        stage('Prune Docker Data') {
-            steps {
-                sh 'docker system prune -a --volumes -f'
-            }
-        }
+        // stage('Prune Docker Data') {
+        //     steps {
+        //         sh 'docker system prune -a --volumes -f'
+        //     }
+        // }
         stage("Start Container") {
             steps {
                sh '''
@@ -37,6 +37,7 @@ pipeline {
                     sleep 15
                     docker exec app ls -ll
                     docker exec app php -v
+                    docker exec app ls -l api
                 '''
             }
         }
