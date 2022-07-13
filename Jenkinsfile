@@ -31,7 +31,7 @@ pipeline {
         }
         stage("Start Container") {
             steps {
-                sh './start.sh'
+                sh 'start.sh'
             }
         }
         stage('Run tests againts container') {
