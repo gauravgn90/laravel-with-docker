@@ -36,6 +36,7 @@ pipeline {
                     docker-compose down -v && docker-compose build --no-cache && docker-compose up -d
                     sleep 15
                     docker exec app ls -ll
+                    docker exec app php -v
                 '''
             }
         }
