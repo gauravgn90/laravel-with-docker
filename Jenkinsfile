@@ -37,6 +37,7 @@ pipeline {
                     sleep 15
                     docker exec app ls -ll
                     docker exec app php -v
+                    docker exec app mv api/.env.example api/.env
                     docker exec app composer install --working-dir=/var/www/api 
                     docker exec app composer dump-autoload --working-dir=/var/www/api 
                     docker exec app php api/artisan
