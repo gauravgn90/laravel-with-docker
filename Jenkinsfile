@@ -33,8 +33,8 @@ pipeline {
             steps {
                sh '''
                     ls -ll
-                    chmod +x ./start.sh
-                    ./start.sh
+                    chmod +x start.sh
+                    start.sh
                 '''
             }
         }
