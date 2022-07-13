@@ -31,7 +31,10 @@ pipeline {
         }
         stage("Start Container") {
             steps {
-                sh 'start.sh'
+               sh '''
+                    chmod +x ./script.sh
+                    ./script.sh
+                '''
             }
         }
         stage('Run tests againts container') {
