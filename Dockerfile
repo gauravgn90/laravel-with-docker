@@ -36,6 +36,7 @@ RUN COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction --no-scripts --ig
 RUN COMPOSER_MEMORY_LIMIT=-1 composer dump-autoload --no-interaction   
 RUN pwd
 RUN ls -al
+RUN mv .env.example .env
 RUN chown -R www-data:www-data /var/www
 
 # Expose port 9000 and start php-fpm server
