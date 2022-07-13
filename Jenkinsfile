@@ -44,8 +44,8 @@ pipeline {
                     docker exec app php api/artisan key:generate
                     docker exec app php api/artisan migrate
                     docker exec app bash -c "chmod -R 777 api/storage"
-                    docker exec app php api/vendor/bin/phpunit tests/Unit/
-                    docker exec app php api/vendor/bin/phpunit tests/Feature/
+                    docker exec app php api/vendor/bin/phpunit api/tests/Unit/
+                    docker exec app php api/vendor/bin/phpunit api/tests/Feature/
                     docker exec app bash -c "chmod -R 777 api/storage/"
                     
                 '''
