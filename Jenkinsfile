@@ -82,7 +82,6 @@ pipeline {
         stage("Run Laravel App Migrations") {
             steps {
                 sh '''
-                    docker exec app php api/artisan migrate:status 
                     docker exec app php api/artisan migrate -f 
                 '''
             }
