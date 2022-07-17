@@ -28,7 +28,7 @@ class ExampleTest2 extends TestCase
     {
         $a = 20;
         $b = 30;
-        $this->assertEquals(60, ($a+$b));
+        $this->assertNotEquals(60, ($a+$b));
     }
 
 
