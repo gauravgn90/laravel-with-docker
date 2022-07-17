@@ -1,1 +1,10 @@
 FROM mysql:5.7.22
+# ENV  MYSQL_DATABASE="laravel_with_docker"
+# ENV  MYSQL_ROOT_PASSWORD="root"
+# ENV  SERVICE_TAGS="dev"
+# ENV  SERVICE_NAME="mysql"
+# ENV  MYSQL_ALLOW_EMPTY_PASSWORD="true"
+# ENV  MYSQL_USER="root"
+#VOLUME "lbdata" "/var/lib/mysql/"
+#VOLUME "./mysql/my.cnf" "/etc/alternatives/my.cnf"
+EXPOSE 3306

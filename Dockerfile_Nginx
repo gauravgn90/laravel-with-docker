@@ -1,1 +1,6 @@
 FROM nginx:alpine
+
+# VOLUME "./" "/var/www"
+# VOLUME "./nginx/conf.d/" "/etc/nginx/conf.d/"
+EXPOSE 80 443
+

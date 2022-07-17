@@ -36,6 +36,11 @@ RUN COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction --no-scripts --ig
 RUN COMPOSER_MEMORY_LIMIT=-1 composer dump-autoload --no-interaction   
 RUN chown -R www-data:www-data /var/www
 
+ENV SERVICE_NAME="app"
+ENV SERVICE_TAGS="dev"
+
+# VOLUME "./" "/var/www"
+# VOLUME "./php/local.ini" "/usr/local/etc/php/conf.d/local.ini"
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
