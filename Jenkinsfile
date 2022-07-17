@@ -273,9 +273,17 @@ pipeline {
                 }
             }
         }
-        stage('Run tests againts container') {
+        stage('Validate App Is Up & Running') {
             steps {
-                sh "curl http://localhost:88"
+                sh 'curl --head "http://localhost:88"'
+            }
+        }
+        stage('Build Id and Build URL') {
+            steps {
+                sh '''
+                    echo "Build Id for this Job is ${BUILD_ID}"
+                    echo "Build URL for this Job is ${BUILD_URL}"
+                '''
             }
         }
     }
