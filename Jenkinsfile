@@ -36,14 +36,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -61,14 +61,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -87,14 +87,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -113,14 +113,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -138,14 +138,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -163,14 +163,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -186,14 +186,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -209,14 +209,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -229,18 +229,23 @@ pipeline {
                 '''
             }
             post {
+                success {
+                    script {
+                        sh 'All test cases are passed!'
+                    }
+                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //// error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
-                           sh "exit 1"
-                          //or
-                          error "Unstable, exiting now..."                    
+                        sh "exit 1"
+                        //or
+                        // error "Unstable, exiting now..."                    
                      }
                 }
             }
@@ -256,14 +261,14 @@ pipeline {
                     script{
                         sh "exit 1"
                         //or
-                        error "Failed, exiting now..."
+                        //error "Failed, exiting now..."
                     }
                 }
                 unstable {
                     script{
                            sh "exit 1"
                           //or
-                          error "Unstable, exiting now..."                    
+                          // error "Unstable, exiting now..."                    
                      }
                 }
             }
