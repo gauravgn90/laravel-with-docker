@@ -231,7 +231,7 @@ pipeline {
             post {
                 success {
                     script {
-                        sh 'All test cases are passed!'
+                        sh 'echo "All test cases are passed!"'
                     }
                 }
                 failure {
