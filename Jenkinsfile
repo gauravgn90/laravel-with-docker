@@ -224,8 +224,8 @@ pipeline {
         stage("Run Laravel App Test Cases") {
             steps {
                 sh '''
-                    docker exec app php api/vendor/bin/phpunit api/tests/Unit/
-                    docker exec app php api/vendor/bin/phpunit api/tests/Feature/
+                    docker exec app php api/vendor/bin/phpunit api/tests/Unit/*
+                    docker exec app php api/vendor/bin/phpunit api/tests/Feature/*
                 '''
             }
             post {
