@@ -16,4 +16,20 @@ class ExampleTest2 extends TestCase
         $this->assertTrue(true);
         //
     }
+
+    public function test_sum_function_success()
+    {
+        $a = 20;
+        $b = 30;
+        $this->assertEquals(50, ($a+$b));
+    }
+
+    public function test_sum_function_failure()
+    {
+        $a = 20;
+        $b = 30;
+        $this->assertEquals(60, ($a+$b));
+    }
+
+
 }
