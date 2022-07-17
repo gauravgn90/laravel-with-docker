@@ -32,16 +32,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -61,16 +57,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -91,16 +83,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -121,16 +109,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -150,16 +134,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -179,16 +159,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -206,16 +182,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -233,16 +205,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -261,16 +229,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
@@ -288,16 +252,12 @@ pipeline {
                 '''
             }
             post {
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
                         //or
                         error "Failed, exiting now..."
                     }
-                }
-                aborted {
                 }
                 unstable {
                     script{
