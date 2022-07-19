@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label "docker-agent-alpine"
-        }
-    }
+    agent any
     environment {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
     }
