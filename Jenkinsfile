@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
+        dockerhub=credentials('gauravgn90_dockerhub_user')
     }
    
     stages {
@@ -50,6 +51,7 @@ pipeline {
         stage('Pulling docker images from docker hub') {
             steps {
                 sh '''
+                    
                     docker pull gauravgn90/laravel_mysql_service:v1
                     docker pull gauravgn90/laravel_nginx_service:v1
                     docker pull gauravgn90/laravel_php_service:v1
