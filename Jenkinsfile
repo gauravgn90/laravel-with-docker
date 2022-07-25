@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh '''
                     whoami
+                    newgrp docker
                 '''
             }
         }
@@ -51,7 +52,7 @@ pipeline {
         stage('Pulling docker images from docker hub') {
             steps {
                 sh '''
-                    
+
                     docker pull gauravgn90/laravel_mysql_service:v1
                     docker pull gauravgn90/laravel_nginx_service:v1
                     docker pull gauravgn90/laravel_php_service:v1
