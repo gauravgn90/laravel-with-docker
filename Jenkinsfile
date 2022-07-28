@@ -317,7 +317,7 @@ pipeline {
                 echo 'Sending email after successful build generation.'  
             '''  
             emailext to: "gaurav@example.com",
-            subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}",
+            subject: "SUCCESS CI: Project:: ${env.JOB_NAME} : ${env.BUILD_NUMBER}",
             body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL build: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a><br>App Url: <a href='${APP_URL}'' target='_blank'>${APP_URL}</a>",
             mimeType: 'text/html',
             replyTo: ''
@@ -328,7 +328,7 @@ pipeline {
                 echo 'Sending email after failure in build generation.'  
             '''  
             emailext to: "gaurav@example.com",
-            subject: "ERROR CI: Project name -> ${env.JOB_NAME}",
+            subject: "ERROR CI: Project:: ${env.JOB_NAME} : ${env.BUILD_NUMBER}",
             body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL build: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a>",
             mimeType: 'text/html',
             replyTo: ''
