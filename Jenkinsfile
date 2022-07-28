@@ -28,8 +28,8 @@ pipeline {
         stage('Prune Docker Data') {
             steps {
                 sh '''
-                    docker system prune -a --volumes -f
-                    docker-compose down --remove-orphans -v
+                    /* docker system prune -a --volumes -f
+                    docker-compose down --remove-orphans -v */
                 '''
             }
             post {
