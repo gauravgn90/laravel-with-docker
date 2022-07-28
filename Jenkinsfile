@@ -4,6 +4,7 @@ pipeline {
     environment {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
         dockerhub=credentials('gauravgn90_dockerhub_user')
+        VERSION="v2"
     }
    
     stages {
@@ -65,9 +66,9 @@ pipeline {
         stage('Pulling docker images from docker hub') {
             steps {
                 sh '''
-                    docker pull gauravgn90/laravel_mysql_service:v1
-                    docker pull gauravgn90/laravel_nginx_service:v1
-                    docker pull gauravgn90/laravel_php_service:v1
+                    docker pull gauravgn90/laravel_mysql_service:${VERSION}
+                    docker pull gauravgn90/laravel_nginx_service:${VERSION}
+                    docker pull gauravgn90/laravel_php_service:${VERSION}
                 '''
             }
             post {
