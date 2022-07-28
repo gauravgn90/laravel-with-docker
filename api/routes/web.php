@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CompanyCRUDController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,5 @@ Route::get('/fail', function () {
 Route::get('/not-found', function () {
     return "no found";
 });
+
+Route::resource('companies', CompanyCRUDController::class);
