@@ -317,7 +317,6 @@ pipeline {
             emailext to: "gaurav@example.com",
             subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}",
             body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
-            charset: 'UTF-8',
             mimeType: 'text/html',
             replyTo: ''
         }  
@@ -329,7 +328,6 @@ pipeline {
             emailext to: "gaurav@example.com",
             subject: "ERROR CI: Project name -> ${env.JOB_NAME}",
             body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
-            charset: 'UTF-8',
             mimeType: 'text/html',
             replyTo: ''
         }
