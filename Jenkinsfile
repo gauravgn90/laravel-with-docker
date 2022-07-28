@@ -1,3 +1,4 @@
+@Library("laravel-docker-shared-library") _
 pipeline {
     agent any
     environment {
@@ -22,6 +23,13 @@ pipeline {
                     docker-compose --version
                     curl --version
                     jq --version
+                ''' 
+            }
+        }
+        stage("Laravel Jenkins Shared Lib") {
+            steps {
+                sh '''
+                    helloJenkins()
                 ''' 
             }
         }
