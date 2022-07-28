@@ -52,7 +52,7 @@ pipeline {
         stage("Checking Docker Credentilas") {
             steps {
                 sh '''
-                    echo docker $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin
+                    echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin
                 '''
             }
         }
