@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     # docker system prune -a --volumes -f
-                    # docker-compose down --remove-orphans -v */
+                    # docker-compose down --remove-orphans -v
                 '''
             }
             post {
