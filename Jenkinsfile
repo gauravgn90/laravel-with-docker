@@ -4,7 +4,7 @@ pipeline {
     environment {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
         dockerhub=credentials('gauravgn90_dockerhub_user')
-        VERSION="v2"
+        VERSION="v3"
         APP_URL="http://localhost:88"
     }
    

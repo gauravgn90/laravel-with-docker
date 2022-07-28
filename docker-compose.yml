@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: gauravgn90/laravel_php_service:v2
+    image: gauravgn90/laravel_php_service:v3
     container_name: app
     restart: unless-stopped
     tty: true
@@ -14,7 +14,7 @@ services:
       SERVICE_TAGS: dev
     working_dir: /var/www
     volumes:
-      - php_data:/var/www
+      - app_and_webserver:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
     networks:
@@ -25,7 +25,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_Nginx
-    image: gauravgn90/laravel_nginx_service:v2
+    image: gauravgn90/laravel_nginx_service:v3
     container_name: webserver
     restart: unless-stopped
     tty: true
@@ -33,7 +33,7 @@ services:
       - "88:80"
       - "444:443"
     volumes:
-      - nginx_web_server_data:/var/www
+      - app_and_webserver:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
         - app-network
@@ -43,7 +43,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_MySql
-    image: gauravgn90/laravel_mysql_service:v2
+    image: gauravgn90/laravel_mysql_service:v3
     container_name: db
     restart: unless-stopped
     tty: true
@@ -73,8 +73,6 @@ networks:
 volumes:
   lbdata:
     driver: local
-  php_data:
-    driver: local
-  nginx_web_server_data:
+  app_and_webserver:
     driver: local
   
