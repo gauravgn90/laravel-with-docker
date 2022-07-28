@@ -301,10 +301,39 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //         sh 'docker-compose down --remove-orphans -v'
-    //         sh 'docker-compose ps'
-    //     }
-    // }
+    post {
+        always {
+            /* sh 'docker-compose down --remove-orphans -v'
+            sh 'docker-compose ps' */
+            sh '''
+                echo 'This will always run'  
+            '''
+        }
+
+        success {
+            sh '''
+                echo 'This will run only if successful'  
+                mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}", to: "gaurav@example.com";  
+            '''  
+        }  
+        
+        failure {
+            sh '''
+                mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "gaurav@example.com";  
+            '''  
+        }
+
+        unstable {  
+            sh '''
+                echo 'This will run only if the run was marked as unstable'  
+            '''
+        }
+          
+        changed {  
+            sh '''
+                echo 'This will run only if the state of the Pipeline has changed'  
+                echo 'For example, if the Pipeline was previously failing but is now successful'  
+            '''
+        }  
+    }
 }
