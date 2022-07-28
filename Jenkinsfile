@@ -8,6 +8,7 @@ pipeline {
         APP_URL="http://localhost:88"
     }
 
+
     stages {
         stage("User Name") {
             steps {
