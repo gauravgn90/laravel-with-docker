@@ -28,9 +28,7 @@ pipeline {
         }
         stage("Laravel Jenkins Shared Lib") {
             steps {
-                sh '''
-                    helloJenkins()
-                ''' 
+                helloJenkins()
             }
         }
         stage('Prune Docker Data') {
