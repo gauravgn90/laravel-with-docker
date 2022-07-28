@@ -5,6 +5,7 @@ pipeline {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
         dockerhub=credentials('gauravgn90_dockerhub_user')
         VERSION="v2"
+        APP_URL="http://localhost:88"
     }
    
     stages {
@@ -290,7 +291,7 @@ pipeline {
         }
         stage('Validate App Is Up & Running') {
             steps {
-                sh 'curl --head "http://localhost:88"'
+                sh 'curl --head "${APP_URL}"'
             }
         }
         stage('Build Id and Build URL') {
@@ -317,7 +318,7 @@ pipeline {
             '''  
             emailext to: "gaurav@example.com",
             subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}",
-            body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL build: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a>",
+            body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL build: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a><br>App Url: <a href='${APP_URL}'' target='_blank'>${APP_URL}</a>",
             mimeType: 'text/html',
             replyTo: ''
         }  
