@@ -94,7 +94,8 @@ pipeline {
             steps {
                sh '''
                     ls -ll
-                    docker-compose down -v && docker-compose up -d
+                    ## docker-compose down -v && docker-compose up -d
+                    docker-compose stop && docker-compose up -d
                     sleep 15
                     docker exec app ls -ll
                 '''
