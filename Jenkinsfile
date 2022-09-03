@@ -3,7 +3,7 @@ pipeline {
     agent any
     environment {
         PATH = "$PATH:/home/gauravkumar/.local/bin/docker-compose"
-        dockerhub=credentials('gauravgn90_dockerhub_user')
+        DOCKERHUB_CREDENTIALS=credentials('gauravgn90_dockerhub_user')
         VERSION="v3"
         APP_URL="http://localhost:88"
     }
@@ -61,7 +61,7 @@ pipeline {
         stage("Checking Docker Credentilas") {
             steps {
                 sh '''
-                    echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin
+                    echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
                 '''
             }
         }
